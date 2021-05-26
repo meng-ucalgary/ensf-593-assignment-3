@@ -1,0 +1,36 @@
+@startuml
+class NewtonApp
+{
+	-newton: NewtonTester
+	-reader: KeyboardReader
+	+NewtonApp()
+	+run(): void
+	+{static} main(args: String[]): void
+}
+
+class NewtonTester
+{
+	-numberOfIterations: int
+	-N: double
+	-guess: double
+	-tolerance: double
+	+NewtonTester(N: double, guess: double, tolerance: double)
+	+sqrt(): double
+	+getNumberOfIterations(): int
+}
+
+class KeyboardReader
+{
+	-reader: BufferedReader
+	+KeyboardReader()
+	+getKeyboardInput(): String
+	+getKeyboardInteger(): int
+	+getKeyboardDouble(): double
+	+prompt(s: String): void
+	+display(s: String): void
+	-readKeyboard(): String
+}
+
+NewtonApp *-- NewtonTester
+NewtonApp *-- KeyboardReader
+@enduml

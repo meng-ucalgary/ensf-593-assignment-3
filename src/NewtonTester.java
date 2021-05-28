@@ -60,6 +60,7 @@ public class NewtonTester {
             prevGuess = guess;
             guess = ((this.N / guess) + guess) / 2;
 
+            // making guesses only until new guess are closer to previous guess
             if (Math.abs(guess - prevGuess) < this.tolerance) {
                 break;
             }

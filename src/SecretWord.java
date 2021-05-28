@@ -75,8 +75,10 @@ public class SecretWord {
      * @param ch the character which is replacing the masked asteriks
      */
     public void replaceChars(String s1, String s2, char ch) {
+        // creating a mutable string to unmask the correctly guessed characters
         StringBuilder sb = new StringBuilder(s2);
 
+        // loop to unmask the correctly guessed character 'ch' from all indexes
         for (int i = 0; i < s1.length(); i++) {
             if (s1.charAt(i) == ch) {
                 sb.setCharAt(i, ch);
@@ -86,6 +88,7 @@ public class SecretWord {
                 continue;
         }
 
+        // converting mutable string back to immutable for storing in instance variable
         this.displayedWord = sb.toString();
     }
 

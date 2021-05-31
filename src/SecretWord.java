@@ -76,7 +76,7 @@ public class SecretWord {
      */
     public void replaceChars(String s1, String s2, char ch) {
         // creating a mutable string to unmask the correctly guessed characters
-        StringBuilder sb = new StringBuilder(s2);
+        StringBuffer sb = new StringBuffer(s2);
 
         // loop to unmask the correctly guessed character 'ch' from all indexes
         for (int i = 0; i < s1.length(); i++) {
